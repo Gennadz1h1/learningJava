@@ -1,24 +1,61 @@
 package pages;
 
-import constans.PartnersPageElements;
+import elements.PartnersPageElements;
 import org.junit.jupiter.api.BeforeEach;
+
+import java.util.List;
 
 public class PartnersPage extends BasePage{
     PartnersPageElements partnersPageElements = new PartnersPageElements();
 
     @BeforeEach
     public void redirectToPartnersPage(){
-        click(partnersPageElements.elementOfPartnersTab);
+        click(partnersPageElements.partnersTabElement);
+    }
+
+    public boolean androidSectionIsVisible(){
+        click(partnersPageElements.phpTabFromDocumentationList);
+        return elementIsVisible(partnersPageElements.phpSection);
+    }
+
+    public void clickOnBitbucketButton(){
+        click(partnersPageElements.seeOnBitbucketButton);
+    }
+
+    public String getCurrentURLAfterClickingOnBitbucketButton() {
+        clickOnBitbucketButton();
+        anotherWindowIsOpened();
+        return getCurrentURL(partnersPageElements.bitbucketPage);
     }
 
     public String getBackgroundColorOfManualButton(){
-        return getBackgroundColorOfElement(partnersPageElements.elementOfOpenManualButton);
+        return getCssValue(partnersPageElements.openManualButton, "background-color");
+    }
+
+    public List<String> getTextFromLeftNavigationList(){
+        return  getTextFromAllElements(partnersPageElements.leftNavigationList);
+    }
+
+    public List<String> getTextFromRightNavigationList(){
+        return  getTextFromAllElements(partnersPageElements.rightNavigationList);
+    }
+
+    public String getPageName(){
+        return getText(partnersPageElements.partnersPageName);
     }
 
     public void hoverToOpenManualButton(){
-        hoverToElement(partnersPageElements.elementOfOpenManualButton);
+        hover(partnersPageElements.openManualButton);
     }
 
+    public boolean pythonSectionIsVisible(){
+        click(partnersPageElements.pythonTabFromDocumentationList);
+        return elementIsVisible(partnersPageElements.pythonSection);
+    }
 
+    public boolean phpSectionIsVisible(){
+        click(partnersPageElements.phpTabFromDocumentationList);
+        return elementIsVisible(partnersPageElements.phpSection);
+    }
 
 }

@@ -1,12 +1,15 @@
 package pages;
 
-import constans.Credentials;
-import constans.LoginPageElements;
+import constants.Credentials;
+import elements.LoginPageElements;
 import core.Browser;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.TimeoutException;
+
 import java.util.List;
+
 // реализация работы с дропдауном и прочее повторяющиеся фун-ти
 public class BasePage extends Browser {
     Credentials credentials = new Credentials();
@@ -14,16 +17,18 @@ public class BasePage extends Browser {
 
     @BeforeEach
     public void loginIfRequired() {
-        if (isElementPresent(loginPageElements.buttonSignIn)) {
-            acceptCookie(loginPageElements.buttonAccept);
-            visibilityOfElementAfterClickingOnButton(loginPageElements.buttonSignIn, loginPageElements.headerSignInWindow);
-            fillSignInForm(credentials.user, credentials.password, loginPageElements.fieldEmail, loginPageElements.fieldPassword, loginPageElements.buttonSubmit);
+        if (isElementPresent(loginPageElements.signInButton)) {
+            acceptCookie(loginPageElements.acceptCookiesButton);
+            visibilityOfElementAfterClickingOnButton(loginPageElements.signInButton, loginPageElements.signInWindowHeader);
+            fillEmailField(credentials.userEmail, loginPageElements.emailField);
+            fillPasswordField(credentials.password, loginPageElements.passwordField);
+            clickOnSubmitButton(loginPageElements.submitButton);
         } else {
             System.out.println("Skipping login...");
         }
     }
 
-    public void acceptCookie(By locator){
+    public void acceptCookie(By locator) {
         try {
             this.click(locator);
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -31,22 +36,32 @@ public class BasePage extends Browser {
         }
     }
 
-    public String getBackgroundColorOfElement(By locator){
-        return getCssValue(locator, "background-color");
+    public boolean allStartWithValue(List<String> list, String value){
+        return list.stream()
+                .allMatch(c -> c.startsWith(value));
     }
 
-    public int getSizeOfDropdown(By locator, By locatorsOfDropdownElements) {
-        click(locator);
-        return getTextsFromElements(getAllElements(locatorsOfDropdownElements)).size();
+    public boolean allContainValue(List<String> list, String value){
+        return list.stream()
+                .allMatch(c -> c.contains(value));
     }
 
-    public List<String > getTextFromAllElementsFromDropdown(By locator, By locatorsOfDropdownElements) {
+    public void clickOnSubmitButton(By submitButtonLocator) {
+        click(submitButtonLocator);
+    }
+
+    public int getSizeOfDropdown(By buttonLocator, By dropdownElementsLocator) {
+        click(buttonLocator);
+        return getTexts(getAllElements(dropdownElementsLocator)).size();
+    }
+
+    public List<String> getTextFromAllElementsFromDropdown(By locator, By dropdownElementsLocator) {
         click(locator);
-        return getTextsFromElements(getAllElements(locatorsOfDropdownElements));
+        return getTexts(getAllElements(dropdownElementsLocator));
     }
 
     public List<String> getTextFromAllElements(By locator) {
-        return getTextsFromElements(getAllElements(locator));
+        return getTexts(getAllElements(locator));
     }
 
     public boolean isElementPresent(By locator) {
@@ -58,17 +73,23 @@ public class BasePage extends Browser {
         }
     }
 
-    public void fillSignInForm(String userName, String password, By locatorOfUserName, By locatorOfPassword, By locatorOfSubmitButton) {
-        this.sendKeys(locatorOfUserName, userName)
-                .sendKeys(locatorOfPassword, password)
-                .click(locatorOfSubmitButton);
+    public void fillEmailField(String userName, By userNameInputLocator) {
+        sendKeys(userNameInputLocator, userName);
     }
 
-    public void visibilityOfElementAfterClickingOnButton(By locatorOfButton, By locatorOfElement){
-        this.click(locatorOfButton)
-                .waitForElementToBeVisible(locatorOfElement);
+    public void fillPasswordField(String password, By passwordInputLocator) {
+        sendKeys(passwordInputLocator, password);
     }
 
+    public void fillSearchField(By searchLocator, String value) {
+        sendKeys(searchLocator, value);
+        actions.sendKeys(Keys.ENTER).perform();
+    }
+
+    public void visibilityOfElementAfterClickingOnButton(By buttonLocator, By elementLocator) {
+        this.click(buttonLocator)
+                .waitForElementToBeVisible(elementLocator);
+    }
 
 
 }

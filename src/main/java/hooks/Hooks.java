@@ -1,10 +1,10 @@
 package hooks;
 
-import constans.Credentials;
+import constants.Credentials;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -17,6 +17,7 @@ public class Hooks {
     protected WebDriverWait wait;
     protected WebDriver driver;
     protected Actions actions;
+    protected JavascriptExecutor js;
     Credentials credentials = new Credentials();
 
 
@@ -31,6 +32,7 @@ public class Hooks {
         driver = new ChromeDriver(chromeOptions);
         wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         actions = new Actions(driver);
+        js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.get(credentials.baseURL);

@@ -1,7 +1,7 @@
 package pages;
 
-import constans.Credentials;
-import constans.LoginPageElements;
+import constants.Credentials;
+import elements.LoginPageElements;
 
 
 public class LoginPage extends BasePage {
@@ -10,7 +10,7 @@ public class LoginPage extends BasePage {
 
     @Override
     public void loginIfRequired() {
-        if (!isElementPresent(loginPageElements.buttonSignIn)) {
+        if (!isElementPresent(loginPageElements.signInButton)) {
             acceptCookieOnTheSignInPage();
             fillSignInFormOnSignInPage();
         } else {
@@ -19,12 +19,14 @@ public class LoginPage extends BasePage {
     }
 
     public void acceptCookieOnTheSignInPage(){
-        acceptCookie(loginPageElements.buttonAccept);
+        acceptCookie(loginPageElements.acceptCookiesButton);
     }
 
     public void fillSignInFormOnSignInPage() {
-        visibilityOfElementAfterClickingOnButton(loginPageElements.buttonSignIn, loginPageElements.headerSignInWindow);
-        fillSignInForm(credentials.user, credentials.password, loginPageElements.fieldEmail, loginPageElements.fieldPassword, loginPageElements.buttonSubmit);
+        visibilityOfElementAfterClickingOnButton(loginPageElements.signInButton, loginPageElements.signInWindowHeader);
+        fillEmailField(credentials.userEmail, loginPageElements.emailField);
+        fillPasswordField(credentials.password, loginPageElements.passwordField);
+        clickOnSubmitButton(loginPageElements.submitButton);
     }
 
 }

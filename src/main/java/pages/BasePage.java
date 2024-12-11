@@ -10,7 +10,7 @@ import org.openqa.selenium.TimeoutException;
 
 import java.util.List;
 
-// реализация работы с дропдауном и прочее повторяющиеся фун-ти
+// реализация работы с дропдауном и прочее повторяющиеся фун-ти.
 public class BasePage extends Browser {
     Credentials credentials = new Credentials();
     LoginPageElements loginPageElements = new LoginPageElements();

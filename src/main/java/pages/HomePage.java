@@ -7,7 +7,6 @@ import java.util.List;
 
 public class HomePage extends BasePage{
     HomePageElements homePageElements = new HomePageElements();
-    HomePageConstants homePageConstants = new HomePageConstants();
 
     public void clickOnLogo(){
         click(homePageElements.logo);
@@ -17,15 +16,15 @@ public class HomePage extends BasePage{
         return getText(homePageElements.homePageName);
     }
 
-    public void fillSearchInput() {
-        fillSearchField(homePageElements.searchInput,homePageConstants.city);
+    public void fillSearchInput(String value) {
+        fillSearchField(homePageElements.searchInput,value);
     }
 
     public List<String> getTextFromAllCitiesFromDropdown(){
         return  getTextFromAllElements(homePageElements.searchCitiesInDropdownMenu);
     }
 
-    public boolean allCitiesStartWithEnteredCity(){
-        return allStartWithValue(getTextFromAllCitiesFromDropdown(),homePageConstants.city);
+    public boolean allCitiesStartWithEnteredCity(String value){
+        return allStartWithValue(getTextFromAllCitiesFromDropdown(),value);
     }
 }

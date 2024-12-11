@@ -6,5 +6,7 @@ public class SearchPageConstants {
     public String windParameterWeather = "m/s";
     public String cloudParameterWeather = "%";
     public String pressureParameterWeather = "hpa";
+    public String cityBarcelona = "Barcelona";
+    public String valueAttribute = "value";
 
 }

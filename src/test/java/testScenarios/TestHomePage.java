@@ -1,8 +1,6 @@
 package testScenarios;
 
 import constants.HomePageConstants;
-import constants.MainPageConstants;
-import constants.SearchPageConstants;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.HomePage;
@@ -16,16 +14,16 @@ public class TestHomePage extends HomePage {
 
     @Test
     @DisplayName("Verify that user is redirected to the Home page after clicking on the logo")
-    public void checkThatUserIsRedirectedToTheSearchPage() {
+    public void checkThatUserIsRedirectedToTheSearchPageTest() {
         clickOnLogo();
         assertEquals(homePageConstants.searchPageName,getTextFromHomePageName(),"User isn't redirected to the home page");
     }
 
     @Test
     @DisplayName("Verify that all cities from dropdown on the home page are equal to the entered city")
-    public void checkCitiesListFromSearchPage() {
+    public void checkCitiesListFromSearchPageTest() {
         clickOnLogo();
-        fillSearchInput();
-        assertTrue(allCitiesStartWithEnteredCity(), "Cities from dropdown on the home page are equal to the entered city");
+        fillSearchInput(homePageConstants.cityMadrid);
+        assertTrue(allCitiesStartWithEnteredCity(homePageConstants.cityMadrid), "Cities from dropdown on the home page are equal to the entered city");
     }
 }

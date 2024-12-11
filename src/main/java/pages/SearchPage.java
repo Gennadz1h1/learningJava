@@ -8,16 +8,15 @@ import java.util.List;
 
 public class SearchPage extends BasePage{
     MainPageElements mainPageElements = new MainPageElements();
-    MainPageConstants mainPageConstants = new MainPageConstants();
     SearchPageElements searchPageElements = new SearchPageElements();
     SearchPageConstants searchPageConstants = new SearchPageConstants();
 
-    public void fillSearchInput() {
-        fillSearchField(mainPageElements.searchField,mainPageConstants.city);
+    public void fillSearchInput(String value) {
+        fillSearchField(mainPageElements.searchField,value);
     }
 
-    public String getAttributeFromSearchField(){
-        return getAttributeFromElement(searchPageElements.searchInput, "value");
+    public String getAttributeFromSearchField(String attribute){
+        return getAttributeFromElement(searchPageElements.searchInput, attribute);
     }
 
     public String getSearchPageName(){
@@ -28,8 +27,8 @@ public class SearchPage extends BasePage{
        return  getTextFromAllElements(searchPageElements.namesFromTable);
     }
 
-    public boolean allCitiesStartWithEnteredCity(){
-        return allStartWithValue(getTextFromAllCitiesInList(),mainPageConstants.city);
+    public boolean allCitiesStartWithEnteredCity(String value) {
+        return allStartWithValue(getTextFromAllCitiesInList(),value);
     }
 
     public List<String> getTextFromAllParametersOfWeather(){

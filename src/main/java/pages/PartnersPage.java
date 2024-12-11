@@ -15,7 +15,7 @@ public class PartnersPage extends BasePage{
 
     public boolean androidSectionIsVisible(){
         click(partnersPageElements.phpTabFromDocumentationList);
-        return elementIsVisible(partnersPageElements.phpSection);
+        return isElementFullyVisible(partnersPageElements.phpSection);
     }
 
     public void clickOnBitbucketButton(){
@@ -24,12 +24,12 @@ public class PartnersPage extends BasePage{
 
     public String getCurrentURLAfterClickingOnBitbucketButton() {
         clickOnBitbucketButton();
-        anotherWindowIsOpened();
+        switchToAnotherWindow(getMainWindowHandle());
         return getCurrentURL(partnersPageElements.bitbucketPage);
     }
 
-    public String getBackgroundColorOfManualButton(){
-        return getCssValue(partnersPageElements.openManualButton, "background-color");
+    public String getBackgroundColorOfManualButton(String backgroundValue){
+        return getCssValue(partnersPageElements.openManualButton, backgroundValue);
     }
 
     public List<String> getTextFromLeftNavigationList(){
@@ -50,12 +50,12 @@ public class PartnersPage extends BasePage{
 
     public boolean pythonSectionIsVisible(){
         click(partnersPageElements.pythonTabFromDocumentationList);
-        return elementIsVisible(partnersPageElements.pythonSection);
+        return isElementFullyVisible(partnersPageElements.pythonSection);
     }
 
     public boolean phpSectionIsVisible(){
         click(partnersPageElements.phpTabFromDocumentationList);
-        return elementIsVisible(partnersPageElements.phpSection);
+        return isElementFullyVisible(partnersPageElements.phpSection);
     }
 
 }

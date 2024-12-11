@@ -13,7 +13,7 @@ public class TestLoginPage extends LoginPage {
 
     @Test
     @DisplayName("Verify that user can sign in to application using valid credentials")
-     public void checkLoginWithValidCredentials() {
+     public void checkLoginWithValidCredentialsTest() {
         acceptCookieOnTheSignInPage();
         fillSignInFormOnSignInPage();
         assertEquals(getText(loginPageElements.userNameHeader), loginPageConstants.userName, "User can't sign in to application using valid credentials");

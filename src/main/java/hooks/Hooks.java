@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import url.Url;
 
 import java.time.Duration;
 
@@ -18,7 +19,7 @@ public class Hooks {
     protected WebDriver driver;
     protected Actions actions;
     protected JavascriptExecutor js;
-    Credentials credentials = new Credentials();
+    Url url = new Url();
 
 
     @BeforeEach
@@ -35,7 +36,7 @@ public class Hooks {
         js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.get(credentials.baseURL);
+        driver.get(url.baseURL);
     }
 
     @AfterEach

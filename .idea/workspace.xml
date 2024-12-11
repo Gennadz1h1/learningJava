@@ -4,7 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cb6f524-c765-4991-a113-02836df382bd" name="Changes" comment="all changes" />
+    <list default="true" id="5cb6f524-c765-4991-a113-02836df382bd" name="Changes" comment="all changes">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/constants/APIPageConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/constants/Credentials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/constants/HomePageConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/constants/LoginPageConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/constants/MainPageConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/constants/PartnersPageConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/constants/SearchPageConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/Browser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/elements/APIPageElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/elements/HomePageElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/elements/LoginPageElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/elements/MainPageElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/elements/PartnersPageElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/elements/SearchPageElements.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hooks/Hooks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/APIPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/PartnersPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pages/SearchPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/url/Url.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testScenarios/TestAPIPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testScenarios/TestHomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testScenarios/TestLoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testScenarios/TestMainPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testScenarios/TestPartnersPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testScenarios/TestSearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaLearningNewCourse24.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pages/SearchPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pages/SearchPage.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +71,9 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2ol17McL1p7IjtsePghxGEOf0bM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -56,7 +99,23 @@
       <recent name="org.example.pages" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestPartnersPage.checkBackgroundColorOfOpenManualButtonAfterHoveringTest">
+  <component name="RunManager" selected="JUnit.TestPartnersPage">
+    <configuration name="TestAPIPage.checkThatUserIsRedirectedToAPIPageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaLearningNewCourse24" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testScenarios.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testScenarios" />
+      <option name="MAIN_CLASS_NAME" value="testScenarios.TestAPIPage" />
+      <option name="METHOD_NAME" value="checkThatUserIsRedirectedToAPIPageTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestHomePage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaLearningNewCourse24" />
       <extension name="coverage">
@@ -72,7 +131,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMainPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestPartnersPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaLearningNewCourse24" />
       <extension name="coverage">
         <pattern>
@@ -81,7 +140,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testScenarios" />
-      <option name="MAIN_CLASS_NAME" value="testScenarios.TestMainPage" />
+      <option name="MAIN_CLASS_NAME" value="testScenarios.TestPartnersPage" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,28 +178,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestSearchPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaLearningNewCourse24" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testScenarios.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testScenarios" />
-      <option name="MAIN_CLASS_NAME" value="testScenarios.TestSearchPage" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestPartnersPage" />
+        <item itemvalue="JUnit.TestAPIPage.checkThatUserIsRedirectedToAPIPageTest" />
+        <item itemvalue="JUnit.TestHomePage" />
         <item itemvalue="JUnit.TestPartnersPage.checkBackgroundColorOfOpenManualButtonAfterHoveringTest" />
         <item itemvalue="JUnit.TestPartnersPage.checkBackgroundColorOfOpenManualButtonBeforeHoveringTest" />
-        <item itemvalue="JUnit.TestSearchPage" />
-        <item itemvalue="JUnit.TestMainPage" />
-        <item itemvalue="JUnit.TestHomePage" />
       </list>
     </recent_temporary>
   </component>
